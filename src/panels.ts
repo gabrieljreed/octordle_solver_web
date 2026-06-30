@@ -74,10 +74,17 @@ export class GroupsPanel {
     ).toFixed(1);
     this.statsEl.textContent = `Groups: ${totalGroups} | Largest: ${largest} | Avg: ${avg}`;
 
+    const stateMap: Record<string, string> = { Y: "correct", M: "misplaced", N: "absent" };
+
     for (const group of possibility.groups) {
       const header = document.createElement("li");
       header.className = "group-header";
-      header.textContent = group.possibility;
+      for (let i = 0; i < possibility.word.length; i++) {
+        const span = document.createElement("span");
+        span.className = `mini-tile mini-tile--${stateMap[group.possibility[i]] ?? "absent"}`;
+        span.textContent = possibility.word[i];
+        header.appendChild(span);
+      }
       this.listEl.appendChild(header);
       for (const word of group.words) {
         const item = document.createElement("li");
