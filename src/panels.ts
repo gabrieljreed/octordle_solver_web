@@ -37,7 +37,10 @@ export class BestGuessList {
       this.el.appendChild(li);
     };
 
-    if (pinnedWord) addItem(pinnedWord);
+    if (pinnedWord) {
+      const pinnedPoss = possibilities.find((p) => p.word === pinnedWord);
+      addItem(pinnedWord, pinnedPoss);
+    }
 
     for (const poss of possibilities) {
       this.possibilitiesMap.set(poss.word, poss);
