@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "/octordle_solver_web/",
   build: {
-    outDir: "../docs",
+    outDir: "build",
     emptyOutDir: true,
   },
   worker: {
