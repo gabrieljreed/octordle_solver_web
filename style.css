@@ -65,6 +65,15 @@ main {
   align-items: flex-start;
 }
 
+/* ── Grid area (grid + keyboard stacked) ── */
+#grid-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
 /* ── Grid ── */
 #grid {
   display: flex;
@@ -225,7 +234,7 @@ li.selected {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  padding: 0.75rem 0.5rem 1rem;
+  padding: 0.5rem 0.5rem 0.75rem;
 }
 
 .kb-row {

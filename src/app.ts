@@ -42,7 +42,10 @@ class App {
         <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
       </header>
       <main>
-        <div id="grid"></div>
+        <div id="grid-area">
+          <div id="grid"></div>
+          <div id="keyboard"></div>
+        </div>
         <div id="sidebar">
           <section id="best-guesses-section">
             <h2>Best Guesses</h2>
@@ -63,7 +66,6 @@ class App {
           </section>
         </div>
       </main>
-      <div id="keyboard"></div>
     `;
 
     this.worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
